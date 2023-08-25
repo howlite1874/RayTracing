@@ -21,6 +21,7 @@ win32{
 
 #adding openMP
 QMAKE_CXXFLAGS+= -fopenmp -Wall
+QMAKE_CXXFLAGS += -std=c++11
 LIBS += -fopenmp
 
 # Input

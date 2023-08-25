@@ -19,6 +19,8 @@
 
 #include "Cartesian3.h"
 
+#include <random>
+
 class Ray
 {
 
@@ -29,8 +31,12 @@ public:
     Cartesian3 origin;
     Cartesian3 direction;
     Type ray_type;
-    Ray GetRaySampling(Cartesian3 intersection,Cartesian3 normal);
+    Ray getRandomReflect(const Cartesian3 &hit, const Cartesian3 &normal);
+    void createCoordinateSystem(const Cartesian3 &N, Cartesian3 &Nt, Cartesian3 &Nb);
+    Cartesian3 uniformSampleHemisphere(const float &r1, const float &r2);
 
+private:
+    float bias = 0.0001;
 };
 
 #endif // RAY_H

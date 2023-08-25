@@ -33,6 +33,8 @@
 #include "Ray.h"
 #include "Scene.h"
 
+const float MY_PI = static_cast<float>(std::acos(-1));
+
 // class for a render widget with arcball linked to an external arcball widget
 class RaytraceRenderWidget : public QOpenGLWidget										
 	{ // class RaytraceRenderWidget
@@ -51,6 +53,8 @@ class RaytraceRenderWidget : public QOpenGLWidget
     Scene raytraceScene;
 
     std::thread raytracingThread;
+
+    float pdf = 1 / (2 * MY_PI);
 
 	public:
 	// constructor
